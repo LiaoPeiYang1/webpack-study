@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebpack_react=self.webpackChunkwebpack_react||[]).push([[500],{500:function(e,c,s){s.r(c);var a=s(893),i=s(655);c.default=()=>(0,a.jsx)("div",{children:(0,a.jsx)(i.rU,Object.assign({to:"ceshi"},{children:"ceshi"}))})}}]);
