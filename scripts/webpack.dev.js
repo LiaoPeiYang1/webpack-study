@@ -13,6 +13,23 @@ module.exports = merge(common, {
     // 插件的执行顺序从右到左
     rules: [
       {
+        test: /\.less$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["autoprefixer"]],
+              },
+            },
+          },
+          "less-loader",
+        ],
+        include: /node_modules/,
+      },
+      {
         test: /\.(css|scss|sass)$/,
         use: [
           "style-loader",

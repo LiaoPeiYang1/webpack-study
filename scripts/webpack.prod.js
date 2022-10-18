@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const pkgJSON = require("../package.json");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 console.log("process.env.NODE_ENV: ", process.env.NODE_ENV);
 module.exports = {
   entry: path.resolve(__dirname, "../src/index.tsx"),
@@ -24,6 +25,24 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: ["ts-loader"],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(css|scss|sass)$/,
+        use: [
+         MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              module: {
+                auto: true,
+                localIdentName: "[hash:bash64:8]",
+              },
+            },
+          },
+          "sass-loader",
+        ],
+        // 排除 node_modules 目录
         exclude: /node_modules/,
       },
       {

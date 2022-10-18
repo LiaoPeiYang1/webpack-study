@@ -5,7 +5,6 @@ const AppMain = () => {
 
         <div>
             <Link to="ceshi" >ceshi</Link>
-            
         </div>
     );
 };
