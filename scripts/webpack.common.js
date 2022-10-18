@@ -37,31 +37,6 @@ module.exports = {
         generator: {
           filename: "assets/imgs/[name].[hash:8][ext]",
         },
-      },
-      {
-        test: /\.tsx?$/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: [
-                [
-                  "@babel/preset-env", // 预制配置
-                  {
-                    corejs: {
-                      version: 3,
-                    },
-                    useBuiltIns: "usage", // 按需引入 pollyfill
-                  },
-                ],
-                "@babel/preset-react", // React 环境
-              ],
-              plugins: ["@babel/plugin-transform-runtime"],
-            },
-          },
-          "ts-loader",
-        ],
-        exclude: /node_modules/,
       }
     ],
   },

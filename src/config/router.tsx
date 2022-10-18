@@ -7,10 +7,6 @@ const ROUTER_CONFIG: RouteObject[] = [
     element: <LazyWrapper path="/layout" />,
   },
   {
-    path: "/ceshi",
-    element: <LazyWrapper path="/ceshi" />,
-  },
-  {
     path: "*",
     element: <>404 Not Found!</>,
   },
